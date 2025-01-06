@@ -15,7 +15,7 @@ appnewllm = Flask(__name__)
 CORS(appnewllm)
 
 # Configure the Gemini API
-genai.configure(api_key="AIzaSyCUYFRycP9sSMwuqDg3_P_RI_yKaWWfXtg")  # Replace with your API key
+genai.configure(api_key=" *Your_api_Key* ")  # Replace with your API key
 
 @appnewllm.route("/api/llm", methods=["POST"])
 def run_llm():
