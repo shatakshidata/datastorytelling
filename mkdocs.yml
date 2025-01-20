@@ -1,5 +1,7 @@
 site_name: MkLorum
-repo_url: https://github.com/shatakshidata/my-mkdocs-site
+repo_url: https://github.com/shatakshidata/datastorytelling
+repo_name: "datastorytelling"
+theme: material
 nav:
   - Home: index.md
   - About: about.md
@@ -22,5 +24,11 @@ nav:
     - Scatter-Plot: datavis/scatter_visuals.md
   - LLM: llm.md
   - Wolfram: simulation.md
-theme: material
 
+plugins:
+  - search
+  - git-revision-date  # Shows the last modification date on pages
+
+markdown_extensions:
+  - admonition
+  - codehilite
