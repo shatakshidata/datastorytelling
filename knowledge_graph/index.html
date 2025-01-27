@@ -1,0 +1,1352 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../about/">
+      
+      
+        <link rel="next" href="../textanalytics/tokenization/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Concepts - MkLorum</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MkLorum" class="md-header__button md-logo" aria-label="MkLorum" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MkLorum
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Concepts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/shatakshidata/datastorytelling" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    datastorytelling
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MkLorum" class="md-nav__button md-logo" aria-label="MkLorum" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MkLorum
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/shatakshidata/datastorytelling" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    datastorytelling
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Text Analytics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Text Analytics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../textanalytics/tokenization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tokenization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../textanalytics/wordcloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Word Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../textanalytics/ngram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    N Gram Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../textanalytics/sentiment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sentiment Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Image Analytics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Image Analytics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imageanalytics/imageprocess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Machine Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml/linear_regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linear Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml/knn_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KNN Classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml/clustering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clustering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Visualization
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Data Visualization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datavis/line_visuals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time-Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datavis/bar_visuals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Categorical_bar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datavis/pie_visuals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Categorical_Pie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datavis/scatter_visuals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scatter-Plot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LLM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wolfram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Storytelling Knowledge Graph</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        #mynetwork {
+            width: 100%;
+            height: 800px;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+<body>
+<h1>Data Storytelling Knowledge Graph</h1>
+<div id="mynetwork"></div>
+<script>
+    // Define nodes with main groups, subgroups, and sub-nodes
+    var nodes = new vis.DataSet([
+        // Main Group
+        { id: 1, label: "Data Collection and Preparation", group: "Main" },
+
+        // Sub-Groups
+        { id: 2, label: "Data Sources", group: "Sub" },
+        { id: 3, label: "Data Types", group: "Sub" },
+        { id: 4, label: "Data Quality", group: "Sub" },
+        { id: 5, label: "Data Cleaning", group: "Sub" },
+        { id: 6, label: "Data Transformation", group: "Sub" },
+
+        // Sub-Nodes under Data Sources
+        { id: 7, label: "APIs", group: "Leaf" },
+        { id: 8, label: "Databases", group: "Leaf" },
+        { id: 9, label: "Spreadsheets", group: "Leaf" },
+        { id: 10, label: "Sensors", group: "Leaf" },
+
+        // Sub-Nodes under Data Types
+        { id: 11, label: "Structured", group: "Leaf" },
+        { id: 12, label: "Unstructured", group: "Leaf" },
+        { id: 13, label: "Semi-structured", group: "Leaf" },
+
+        // Sub-Nodes under Data Quality
+        { id: 14, label: "Accuracy", group: "Leaf" },
+        { id: 15, label: "Completeness", group: "Leaf" },
+        { id: 16, label: "Consistency", group: "Leaf" },
+
+        // Sub-Nodes under Data Cleaning
+        { id: 17, label: "Removing Duplicates", group: "Leaf" },
+        { id: 18, label: "Handling Missing Values", group: "Leaf" },
+        { id: 19, label: "Outlier Detection", group: "Leaf" },
+
+        // Sub-Nodes under Data Transformation
+        { id: 20, label: "Normalization", group: "Leaf" },
+        { id: 21, label: "Aggregation", group: "Leaf" },
+        { id: 22, label: "Encoding", group: "Leaf" },
+
+        { id: 23, label: "Data Analysis", group: "Main" },
+        { id: 24, label: "Statistical Analysis", group: "Sub" },
+        { id: 25, label: "Exploratory Data Analysis (EDA)", group: "Sub" },
+        { id: 26, label: "Techniques", group: "Sub" },
+        { id: 27, label: "Tools", group: "Sub" },
+
+        {id: 28, label: "Modeling", group: "Sub" },
+
+        // Nodes under Statistical Analysis
+        { id: 29, label: "Mean", group: "Statistical Analysis" },
+        { id: 30, label: "Median", group: "Statistical Analysis" },
+        { id: 31, label: "Standard Deviation", group: "Statistical Analysis" },
+        { id: 32, label: "Correlation", group: "Statistical Analysis" },
+
+            // Nodes under EDA
+        { id: 33, label: "Histograms", group: "EDA" },
+        { id: 34, label: "Box Plots", group: "EDA" },
+        { id: 35, label: "Scatter Plots", group: "EDA" },
+
+            // Nodes under Techniques
+        { id: 36, label: "Clustering", group: "Techniques" },
+        { id: 37, label: "Regression", group: "Techniques" },
+        { id: 38, label: "Classification", group: "Techniques" },
+
+            // Nodes under Tools
+        { id: 39, label: "Excel", group: "Tools" },
+        { id: 40, label: "R", group: "Tools" },
+        { id: 41, label: "Python (Scikit-learn)", group: "Tools" },
+        { id: 42, label: "SAS", group: "Tools" },
+
+        //Nodes under Modelling
+
+        { id: 43, label: "Regression", group: "modeling"},
+        { id: 44, label: "Classification", group: "modeling" },
+        { id: 45, label: "Clustering", group: "modeling" },
+
+        { id: 46, label: "Visualization Techniques", group: "Main" },
+        { id: 47, label: "Chart Types", group: "Sub" },
+        { id: 48, label: "Advanced Visuals", group: "Sub" },
+        { id: 49, label: "Dashboards", group: "Sub" },
+        { id: 50, label: "Tools", group: "Sub" },
+        { id: 51, label: "Model Interpretability", group: "Sub" },
+        { id: 52, label: "Feature Importance Plots", group: "Sub" },
+        { id: 53, label: "Confusion Matrix Visualization", group: "Sub" },
+        { id: 54, label: "Clustering Visualization", group: "Sub" },
+
+        // Chart Types Leaf Nodes
+        { id: 55, label: "Bar Chart", group: "Leaf" },
+        { id: 56, label: "Line Chart", group: "Leaf" },
+        { id: 57, label: "Pie Chart", group: "Leaf" },
+        { id: 58, label: "Scatter Plot", group: "Leaf" },
+        { id: 59, label: "Heatmap", group: "Leaf" },
+        { id: 60, label: "Bubble Chart", group: "Leaf" },
+
+        // Advanced Visuals Leaf Nodes
+        { id: 61, label: "Tree Maps", group: "Leaf" },
+        { id: 62, label: "Chord Diagrams", group: "Leaf" },
+        { id: 63, label: "Network Graphs", group: "Leaf" },
+
+        // Dashboards Leaf Nodes
+        { id: 64, label: "Real-time Dashboards", group: "Leaf" },
+        { id: 65, label: "KPI Dashboards", group: "Leaf" },
+
+        // Tools Leaf Nodes
+        { id: 66, label: "Tableau", group: "Leaf" },
+        { id: 67, label: "Power BI", group: "Leaf" },
+        { id: 68, label: "D3.js", group: "Leaf" },
+        { id: 69, label: "Matplotlib", group: "Leaf" },
+        { id: 70, label: "Seaborn", group: "Leaf" },
+
+        // Model Interpretability Leaf Nodes
+        { id: 71, label: "SHAP", group: "Leaf" },
+        { id: 72, label: "LIME", group: "Leaf" },
+
+        // Feature Importance Plots Leaf Nodes
+        { id: 73, label: "Gain Charts", group: "Leaf" },
+        { id: 74, label: "Permutation Importance", group: "Leaf" },
+
+        // Confusion Matrix Visualization Leaf Nodes
+        { id: 75, label: "ROC Curve", group: "Leaf" },
+        { id: 76, label: "Precision-Recall Curve", group: "Leaf" },
+
+        // Clustering Visualization Leaf Nodes
+        { id: 77, label: "Dendrograms", group: "Leaf" },
+        { id: 78, label: "Silhouette Analysis", group: "Leaf" },
+
+        // Narrative Structure
+        { id: 79, label: "Narrative Structure", group: "Main" },
+        { id: 80, label: "Story Components", group: "Sub" },
+        { id: 81, label: "Hooks", group: "Sub"},
+        { id: 82, label: "Context", group: "Sub"},
+        { id: 83, label: "Techniques", group: "Sub"},
+        { id: 84, label: "Setup", group: "Leaf" },
+        { id: 85, label: "Conflict", group: "Leaf" },
+        { id: 86, label: "Resolution", group: "Leaf" },
+        { id: 87, label: "Surprising Stats", group: "Leaf" },
+        { id: 88, label: "Questions", group: "Leaf" },
+        { id: 89, label: "Visual Anomalies", group: "Leaf" },
+        { id: 90, label: "Historical Trends", group: "Leaf" },
+        { id: 91, label: "Industry Benchmarks", group: "Leaf" },
+        { id: 92, label: "Chronological Storytelling", group: "Leaf" },
+        { id: 93, label: "Cause-Effect", group: "Leaf" },
+        { id: 94, label: "Contrast", group: "Leaf" },
+
+        { id: 95, label: "Audience Engagement", group: "Main" },
+        { id: 96, label: "Audience Types", group: "Sub" },
+        { id: 97, label: "Personalization", group: "Sub" },
+        { id: 98, label: "Feedback Loops", group: "Sub" },
+        { id: 99, label: "Executives", group: "Leaf" },
+        { id: 100, label: "Analysts", group: "Leaf" },
+        { id: 101, label: "General Public", group: "Leaf" },
+        { id: 102, label: "Localization", group: "Leaf" },
+        { id: 103, label: "Relevance", group: "Leaf" },
+        { id: 104, label: "Accessibility", group: "Leaf" },
+        { id: 105, label: "Polls", group: "Leaf" },
+        { id: 106, label: "Comments", group: "Leaf" },
+        { id: 107, label: "Live Q&A", group: "Leaf" },
+
+        { id: 108, label: "Technologies and Tools", group: "Main" },
+        { id: 109, label: "AI and Automation", group: "Sub" },
+        { id: 110, label: "GPT for Narrative Generation", group: "Leaf" },
+        { id: 111, label: "LLMs for Summarization", group: "Leaf" },
+        { id: 112, label: "Tools", group: "Sub" },
+        { id: 113, label: "Canva", group: "Leaf" },
+        { id: 114, label: "Infogram", group: "Leaf" },
+        { id: 115, label: "Flourish", group: "Leaf" },
+        { id: 116, label: "Streamlit for Dynamic Visualizations", group: "Leaf" },
+
+        { id: 117, label: "Ethics and Bias", group: "Main" },
+        { id: 118, label: "Bias Types", group: "Sub" },
+        { id: 119, label: "Sampling Bias", group: "Leaf" },
+        { id: 120, label: "Algorithmic Bias", group: "Leaf" },
+        { id: 121, label: "Ethics", group: "Sub" },
+        { id: 122, label: "Data Privacy", group: "Leaf" },
+        { id: 123, label: "Transparency", group: "Leaf" },
+        { id: 124, label: "Misleading Visuals", group: "Leaf" },
+        { id: 125, label: "Frameworks", group: "Sub" },
+        { id: 126, label: "FAIR Principles", group: "Leaf" },
+
+        { id: 127, label: "Interactivity and Advanced Features", group: "Main" },
+        { id: 128, label: "Interactive Charts", group: "Sub" },
+        { id: 129, label: "Zoom", group: "Leaf" },
+        { id: 130, label: "Hover Effects", group: "Leaf" },
+        { id: 131, label: "Drill-Down Features", group: "Sub" },
+        { id: 132, label: "Hierarchical Data Exploration", group: "Leaf" },
+        { id: 133, label: "User Inputs", group: "Sub" },
+        { id: 134, label: "Filters", group: "Leaf" },
+        { id: 135, label: "Dynamic Parameters", group: "Leaf" },
+
+        //Data Source Extended
+        { id: 136, label: "Feature Engineering", group: "Sub" },
+        { id: 137, label: "Feature Selection", group: "Leaf" },
+        { id: 138, label: "Feature Scaling", group: "Leaf" },
+        { id: 139, label: "Feature Extraction", group: "Leaf" },
+
+        // Synthetic Data
+        { id: 140, label: "Synthetic Data", group: "Sub" },
+        { id: 141, label: "GANs", group: "Leaf" },
+        { id: 142, label: "Data Augmentation", group: "Leaf" },
+
+        // Data Labeling
+        { id: 143, label: "Data Labeling", group: "Sub" },
+        { id: 144, label: "Manual Labeling", group: "Leaf" },
+        { id: 145, label: "Automated Labeling", group: "Leaf" },
+        { id: 146, label: "Crowdsourced Labeling", group: "Leaf" },
+
+        // Data Imbalance Solutions
+        { id: 147, label: "Data Imbalance Solutions", group: "Sub" },
+        { id: 148, label: "SMOTE", group: "Leaf" },
+        { id: 149, label: "Oversampling", group: "Leaf" },
+        { id: 150, label: "Undersampling", group: "Leaf" },
+
+          // Add nodes for Modeling
+        { id: 151, label: "Supervised Learning", group: "Sub" },
+        { id: 152, label: "Regression", group: "Leaf" },
+        { id: 153, label: "Classification", group: "Leaf" },
+
+        { id: 154, label: "Unsupervised Learning", group: "Sub" },
+        { id: 155, label: "K-Means", group: "Leaf" },
+        { id: 156, label: "DBSCAN", group: "Leaf" },
+        { id: 157, label: "Hierarchical Clustering", group: "Leaf" },
+
+        { id: 158, label: "Deep Learning", group: "Sub" },
+        { id: 159, label: "Neural Networks", group: "Leaf" },
+        { id: 160, label: "CNNs", group: "Leaf" },
+        { id: 161, label: "RNNs", group: "Leaf" },
+        { id: 162, label: "Transformers", group: "Leaf" },
+
+        { id: 163, label: "Dimensionality Reduction", group: "Sub" },
+        { id: 164, label: "PCA", group: "Leaf" },
+        { id: 165, label: "t-SNE", group: "Leaf" },
+        { id: 166, label: "UMAP", group: "Leaf" },
+
+        { id: 167, label: "Time-Series Analysis", group: "Sub" },
+        { id: 168, label: "ARIMA", group: "Leaf" },
+        { id: 169, label: "LSTMs for Forecasting", group: "Leaf" },
+
+        { id: 170, label: "Model Evaluation Metrics", group: "Sub" },
+        { id: 171, label: "Accuracy", group: "Leaf" },
+        { id: 172, label: "Precision", group: "Leaf" },
+        { id: 173, label: "Recall", group: "Leaf" },
+        { id: 174, label: "F1-Score", group: "Leaf" },
+        { id: 175, label: "RMSE", group: "Leaf" }
+    ]);
+
+
+    // Define edges to connect nodes logically
+    var edges = new vis.DataSet([
+        // Connect Main Group to Sub-Groups
+        { from: 1, to: 2 },
+        { from: 1, to: 3 },
+        { from: 1, to: 4 },
+        { from: 1, to: 5 },
+        { from: 1, to: 6 },
+        { from: 1, to: 136 },
+        { from: 1, to: 140 },
+        { from: 1, to: 143 },
+        { from: 1, to: 147 },
+
+        { from: 28, to: 29 },
+        { from: 28, to: 30 },
+        { from: 28, to: 31 },
+        { from: 28, to: 32 },
+
+        // Connect Sub-Groups to Sub-Nodes
+        { from: 2, to: 7 },
+        { from: 2, to: 8 },
+        { from: 2, to: 9 },
+        { from: 2, to: 10 },
+
+        { from: 3, to: 11 },
+        { from: 3, to: 12 },
+        { from: 3, to: 13 },
+
+        { from: 4, to: 14 },
+        { from: 4, to: 15 },
+        { from: 4, to: 16 },
+
+        { from: 5, to: 17 },
+        { from: 5, to: 18 },
+        { from: 5, to: 19 },
+
+        { from: 6, to: 20 },
+        { from: 6, to: 21 },
+        { from: 6, to: 22 },
+
+        { from: 23, to: 24 },
+        { from: 23, to: 25 },
+        { from: 23, to: 26 },
+        { from: 23, to: 27 },
+
+        { from: 24, to: 29 },
+        { from: 24, to: 30 },
+        { from: 24, to: 31 },
+        { from: 24, to: 32 },
+
+        { from: 25, to: 33 },
+        { from: 25, to: 34 },
+        { from: 25, to: 35 },
+
+        { from: 26, to: 36 },
+        { from: 26, to: 37 },
+        { from: 26, to: 38 },
+
+        { from: 27, to: 39 },
+        { from: 27, to: 40 },
+        { from: 27, to: 41 },
+        { from: 27, to: 42 },
+
+        { from: 28, to: 43 },
+        { from: 28, to: 44 },
+        { from: 28, to: 45 },
+
+        { from: 46, to: 47 },
+        { from: 46, to: 48 },
+        { from: 46, to: 49 },
+        { from: 46, to: 50 },
+        { from: 46, to: 51 },
+        { from: 46, to: 52 },
+        { from: 46, to: 53 },
+        { from: 46, to: 54 },
+
+            // Connections for Chart Types
+        { from: 47, to: 55 },
+        { from: 47, to: 56 },
+        { from: 47, to: 57 },
+        { from: 47, to: 58 },
+        { from: 47, to: 59 },
+        { from: 47, to: 60 },
+
+            // Connections for Advanced Visuals
+        { from: 48, to: 61 },
+        { from: 48, to: 62 },
+        { from: 48, to: 63 },
+
+            // Connections for Dashboards
+        { from: 49, to: 64 },
+        { from: 49, to: 65 },
+
+            // Connections for Tools
+        { from: 50, to: 66 },
+        { from: 50, to: 67 },
+        { from: 50, to: 68 },
+        { from: 50, to: 69 },
+        { from: 50, to: 70 },
+
+            // Connections for Model Interpretability
+        { from: 51, to: 71 },
+        { from: 51, to: 72 },
+
+            // Connections for Feature Importance Plots
+        { from: 52, to: 73 },
+        { from: 52, to: 74 },
+
+            // Connections for Confusion Matrix Visualization
+        { from: 53, to: 75 },
+        { from: 53, to: 76 },
+
+            // Connections for Clustering Visualization
+        { from: 54, to: 77 },
+        { from: 54, to: 78 },
+
+        { from: 79, to: 80 },
+        { from: 79, to: 81 },
+        { from: 79, to: 82 },
+        { from: 79, to: 83 },
+        { from: 80, to: 84 },
+        { from: 80, to: 85 },
+        { from: 80, to: 86 },
+        { from: 81, to: 87 },
+        { from: 81, to: 88 },
+        { from: 81, to: 89 },
+        { from: 82, to: 90 },
+        { from: 82, to: 91 },
+        { from: 83, to: 92 },
+        { from: 83, to: 93 },
+        { from: 83, to: 94 },
+
+        { from: 95, to: 96 },
+        { from: 95, to: 97 },
+        { from: 95, to: 98 },
+        { from: 96, to: 99 },
+        { from: 96, to: 100 },
+        { from: 96, to: 101 },
+        { from: 97, to: 102 },
+        { from: 97, to: 103 },
+        { from: 97, to: 104 },
+        { from: 98, to: 105 },
+        { from: 98, to: 106 },
+        { from: 98, to: 107 },
+
+        { from: 108, to: 109 },
+        { from: 109, to: 110 },
+        { from: 109, to: 111 },
+        { from: 108, to: 112 },
+        { from: 112, to: 113 },
+        { from: 112, to: 114 },
+        { from: 112, to: 115 },
+        { from: 112, to: 116 },
+
+        { from: 117, to: 118 },
+        { from: 118, to: 119 },
+        { from: 118, to: 120 },
+        { from: 117, to: 121 },
+        { from: 121, to: 122 },
+        { from: 121, to: 123 },
+        { from: 121, to: 124 },
+        { from: 117, to: 125 },
+        { from: 125, to: 126 },
+
+        { from: 127, to: 128 },
+        { from: 128, to: 129 },
+        { from: 128, to: 130 },
+        { from: 127, to: 131 },
+        { from: 131, to: 132 },
+        { from: 127, to: 133 },
+        { from: 133, to: 134 },
+        { from: 133, to: 135 },
+
+        // Feature Engineering Edges
+        { from: 136, to: 137 },
+        { from: 136, to: 138 },
+        { from: 136, to: 139 },
+
+        // Synthetic Data Edges
+        { from: 140, to: 141 },
+        { from: 140, to: 142 },
+
+        // Data Labeling Edges
+        { from: 143, to: 144 },
+        { from: 143, to: 145 },
+        { from: 143, to: 146 },
+
+        // Data Imbalance Solutions Edges
+        { from: 147, to: 148 },
+        { from: 147, to: 149 },
+        { from: 147, to: 150 },
+
+        { from: 28, to: 151 }, // Modeling -> Supervised Learning
+        { from: 151, to: 152 }, // Supervised Learning -> Regression
+        { from: 151, to: 153 }, // Supervised Learning -> Classification
+
+        { from: 28, to: 154 }, // Modeling -> Unsupervised Learning
+        { from: 154, to: 155 }, // Unsupervised Learning -> K-Means
+        { from: 154, to: 156 }, // Unsupervised Learning -> DBSCAN
+        { from: 154, to: 157 }, // Unsupervised Learning -> Hierarchical Clustering
+
+        { from: 28, to: 158 }, // Modeling -> Deep Learning
+        { from: 158, to: 159 }, // Deep Learning -> Neural Networks
+        { from: 158, to: 160 }, // Deep Learning -> CNNs
+        { from: 158, to: 161 }, // Deep Learning -> RNNs
+        { from: 158, to: 162 }, // Deep Learning -> Transformers
+
+        { from: 28, to: 163 }, // Modeling -> Dimensionality Reduction
+        { from: 163, to: 164 }, // Dimensionality Reduction -> PCA
+        { from: 163, to: 165 }, // Dimensionality Reduction -> t-SNE
+        { from: 163, to: 166 }, // Dimensionality Reduction -> UMAP
+
+        { from: 28, to: 167 }, // Modeling -> Time-Series Analysis
+        { from: 167, to: 168 }, // Time-Series Analysis -> ARIMA
+        { from: 167, to: 169 }, // Time-Series Analysis -> LSTMs for Forecasting
+
+        { from: 28, to: 170 }, // Modeling -> Model Evaluation Metrics
+        { from: 170, to: 171 }, // Model Evaluation Metrics -> Accuracy
+        { from: 170, to: 172 }, // Model Evaluation Metrics -> Precision
+        { from: 170, to: 173 }, // Model Evaluation Metrics -> Recall
+        { from: 170, to: 174 }, // Model Evaluation Metrics -> F1-Score
+        { from: 170, to: 175 }  // Model Evaluation Metrics -> RMSE
+    ]);
+
+    // Create a network
+    var container = document.getElementById("mynetwork");
+    var data = {
+        nodes: nodes,
+        edges: edges
+    };
+    var options = {
+        groups: {
+            Main: { color: { background: "#FF6F61" }, font: { color: "#fff" } },
+            Sub: { color: { background: "#6BAED6" }, font: { color: "#fff" } },
+            Leaf: { color: { background: "#FDD835" }, font: { color: "#000" } }
+        },
+        physics: {
+            enabled: true,
+            solver: "forceAtlas2Based"
+        },
+        interaction: {
+            hover: true
+        }
+    };
+    var network = new vis.Network(container, data, options);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    2025-01-27
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  </body>
+</html>
